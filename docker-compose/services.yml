@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  costumer-personal-service:
+    image: ${GROUP_ID}/costumer.personal.service:${SERVICE_VERSION:-latest}
+    ports:
+      - "5005:5005"
+    volumes:
+      - "./docker-logs:/workspace/costumer-personal-service/logs"
+    user: root
+    depends_on:
+      - kafka-broker-1
+      - kafka-broker-2
+      - kafka-broker-3
+    environment:
+      - "LOGGING_LEVEL_ROOT=info"
+      - "KAFKA-CONFIG_BOOTSTRAP-SERVERS=kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092"
+      - "KAFKA-CONFIG_SCHEMA-REGISTRY-URL=http://schema-registry:8081"
+      - "LOG_APP-NAME=costumer-personal-service"
+    networks:
+      - ${GLOBAL_NETWORK:-services}
