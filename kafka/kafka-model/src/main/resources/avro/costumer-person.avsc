@@ -1,0 +1,72 @@
+{
+  "name": "CostumerPersonalAvroModel",
+  "type": "record",
+  "namespace": "com.estudo.performance.model",
+  "fields": [
+    {
+      "name": "nomeCompleto",
+      "type": "string"
+    },
+    {
+      "name": "cpf",
+      "type": "string"
+    },
+    {
+      "name": "nomeSocial",
+      "type": "string"
+    },
+    {
+      "name": "dataNascimento",
+      "type": "string"
+    },
+    {
+      "name": "estadoCivil",
+      "type": ["null", "int"]
+    },
+    {
+      "name": "sexo",
+      "type": "string"
+    },
+    {
+      "name": "nacionalidade",
+      "type": "string"
+    },
+    {
+      "name": "endereco",
+      "type": {
+        "name": "EnderecoAvroModel",
+        "type": "record",
+        "fields": [
+          {
+            "name": "enderecoResidencial",
+            "type": "string"
+          },
+          {
+            "name": "complemento",
+            "type": ["null","string"]
+          },
+          {
+            "name": "bairro",
+            "type": ["null", "string"]
+          },
+          {
+            "name": "municipio",
+            "type": "string"
+          },
+          {
+            "name": "uf",
+            "type": "string"
+          },
+          {
+            "name": "CEP",
+            "type": "string"
+          },
+          {
+            "name": "pais",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}

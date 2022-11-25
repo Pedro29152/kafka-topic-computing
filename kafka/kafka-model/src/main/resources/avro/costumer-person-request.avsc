@@ -1,0 +1,11 @@
+{
+  "name": "CostumerPersonalRequestAvroModel",
+  "type": "record",
+  "namespace": "com.estudo.performance.model",
+  "fields": [
+    {
+      "name": "cpf",
+      "type": "string"
+    }
+  ]
+}
